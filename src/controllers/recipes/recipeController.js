@@ -1,76 +1,111 @@
-import recetaModel from "../../models/recetaModel.js";
+import recipeModel from "../../models/recipeModel.js";
+import commentController from "../comments/commentController.js";
 
-const getAll = async () => {
+const getAll = async()=> {
     try {
-        const recetas = await recetaModel.find();
-        return recetas;
+        const recipes = await recipeModel.find();
+        return recipes;
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return [];
     }
 }
-
-const getById = async (id) => {
+const getById = async(id) =>{
     try {
-        const receta = await recetaModel.findById(id);
-        return receta;
+        const recipe = await recipeModel.findById(id);
+        await recipe.populate("users");
+        await recipe.populate("comments");
+        return recipe;
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return null;
+        
     }
 }
 
-const create = async (data ) => {
+const create = async(data) =>{
     try {
-        const receta = await recetaModel.create(data);
-        return receta;
+        const recipe = await recipeModel.create(data);
+        recipe.users.push(data.owner);
+        await recipe.save();
+        return recipe;
     } catch (error) {
-        console.log(error);
-        return null;
+        console.error(error); 
+        return null;  
     }
 }
 
-const update = async (id, data) => {
+const update = async(id,data) =>{
     try {
-        const receta = await recetaModel.findByIdAndUpdate(id, data);
-        return receta;
+        await recipeModel.findByIdAndUpdate(id,data);
+
+        const recipe = await recipeModel.findById(id);
+        return recipe;
     } catch (error) {
         console.error(error);
         return null;
     }
 }
 
-const remove = async (id) => {
+const remove = async(id) =>{
     try {
-        const receta = await recetaModel.findByIdAndDelete(id);
-        return receta;
+        const recipe = await recipeModel.findByIdAndDelete(id);
+        const result = await commentController.removeForrecipe(id);
+        return recipe;
     } catch (error) {
         console.error(error);
         return null;
     }
 }
-const addUser = async(recetaId,userId) =>{
+const addUser = async(recipeId,userId) =>{
     try {
-        const receta = await getById(recetaId);
-        if(!receta.users.includes(userId)){
-            receta.users.push(userId);
-            await receta.save();
-            return receta
+        const recipe = await getById(recipeId);
+        if(!recipe.users.includes(userId)){
+            recipe.users.push(userId);
+            await recipe.save();
+            return recipe
         }
-        return receta;
+        return recipe;
     } catch (error) {
         return null;
     }
 }
-const removeUser = async(recetaId,userId)=>{
+const removeUser = async(recipeId,userId)=>{
     try {
-        const receta = await getById(recetaId);
-        if(receta.users.includes(userId)){
-            receta.users = receta.users.filter(u=> u!==userId);
-            await receta.save();
-            return receta
+        console.log("removeUser",recipeId,userId)
+        const recipe = await getById(recipeId);
+        if(recipe.users.includes(userId)){
+            recipe.users = recipe.users.filter(u=> !u.equals(userId));
+            await recipe.save();
+            return recipe
         }
-        return receta;
+        return recipe;
+    } catch (error) {
+        return null;
+    }
+}
+const addComment = async(recipeId,commentId) =>{
+    try {
+        const recipe = await getById(recipeId);
+        if(!recipe.comments.includes(commentId)){
+            recipe.comments.push(commentId);
+            await recipe.save();
+            return recipe
+        }
+        return recipe;
+    } catch (error) {
+        return null;
+    }
+}
+const removeComment = async(recipeId,commentId)=>{
+    try {
+        const recipe = await getById(recipeId);
+        if(recipe.comments.includes(commentId)){
+            recipe.comments = recipe.comments.filter(u=> u!==commentId);
+            await recipe.save();
+            return recipe
+        }
+        return recipe;
     } catch (error) {
         return null;
     }
@@ -83,6 +118,8 @@ export const functions = {
     remove,
     addUser,
     removeUser,
+    addComment,
+    removeComment
 }
 
 export default functions;
