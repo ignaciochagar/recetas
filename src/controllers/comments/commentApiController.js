@@ -1,8 +1,8 @@
 import commentController from "./commentController.js";
 
 const getAll = async(req,res)=>{
-    const projectId = req.query.projectId;
-    const comments = await commentController.getAll(projectId);
+    const recipeId = req.query.recipeId;
+    const comments = await commentController.getAll(recipeId);
     res.json({data:comments});
 }
 
@@ -38,15 +38,15 @@ const remove = async(req,res)=>{
 const addUser = async(req,res)=>{
     const commentId = req.params.id;
     const userId = req.body.userId;
-    const task = await taskController.addUser(taskId,userId);
-    res.json({data:task})
+    const comment = await commentController.addUser(commentId,userId);
+    res.json({data:comment})
 }
 
 const removeUser = async(req,res)=>{
-    const taskId = req.params.id;
+    const commentId = req.params.id;
     const userId = req.body.userId;
-    const task = await taskController.removeUser(taskId,userId);
-    res.json({data:task})
+    const comment = await commentController.removeUser(commentId,userId);
+    res.json({data:comment})
 }
 
 

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const recetaSchema = new mongoose.Schema({
+
+const recipeSchema = new mongoose.Schema({
     title: {
         type: String, required: true
     },
@@ -20,10 +21,13 @@ const recetaSchema = new mongoose.Schema({
         type: String, required: true
     },
     author: {
-        type: Schema.Types.ObjectId, ref: 'User', required: true
-    }
-});
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+      },
+    });
+    
+    
+const recipeModel = mongoose.model("recipes", recipeSchema);
 
-const recetaModel = mongoose.model("recetas", recetaSchema);
-
-export default recetaModel;
+export default recipeModel;

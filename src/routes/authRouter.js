@@ -1,11 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const { register, login } = require('../controllers/authController');
+import {Router} from "express";
 
-// Registro de usuario
-router.post('/register', register);
+import userApiController from "../controllers/users/userApiController.js";
 
-// Inicio de sesión de usuario
-router.post('/login', login);
 
-module.exports = router;
+const router  = Router();
+
+
+router.post("/register",userApiController.register);
+router.post("/login",userApiController.login);
+
+export default router;

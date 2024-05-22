@@ -11,10 +11,10 @@ const getById = async (req,res) =>{
     res.json({data:recipe});
 }
 
-
-
 const create = async(req,res)=>{
-    const recipe = await recipeController.create(req.body);
+    const author = req.user._id;
+    const data = {...req.body,author:author};
+    const recipe = await recipeController.create(data);
     res.json({data:recipe})
 }
 

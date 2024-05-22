@@ -1,5 +1,5 @@
 import commentModel from "../../models/commentModel.js";
-import recipeController from "../recipes/recipetController.js"
+import recipeController from "../recipes/recipeController.js"
 
 const getAll = async (recipeId) =>{
     try {
@@ -79,7 +79,7 @@ const remove = async(id) =>{
         return null;
     }
 }
-const removeForrecipe = async(recipeId) =>{
+const removeForRecipe = async(recipeId) =>{
     try {
         const comments = await commentModel.deleteMany({ recipe: recipeId });
         return comments;

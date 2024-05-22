@@ -1,4 +1,6 @@
-const User = require('../models/User');
+
+
+/* const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -50,3 +52,4 @@ exports.login = async (req, res) => {
     res.status(500).send('Error en el servidor');
   }
 };
+ */
