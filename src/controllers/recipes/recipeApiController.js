@@ -11,6 +11,14 @@ const getById = async (req,res) =>{
     res.json({data:recipe});
 }
 
+//quiero sacar las recestas de un author
+const getByProperty = async (req, res) => {
+    const { property, value } = req.query;
+    const recipes = await recipeController.getByProperty(property, value);
+    res.json({ data: recipes })
+}
+
+
 const create = async(req,res)=>{
     const author = req.user._id;
     const data = {...req.body,author:author};
@@ -48,6 +56,7 @@ const removeUser = async(req,res)=>{
 export default{
     getAll,
     getById,
+    getByProperty,
     create,
     update,
     remove,

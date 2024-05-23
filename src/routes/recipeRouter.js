@@ -7,6 +7,7 @@ const router  = Router();
 
 router.get("/",recipeApiController.getAll);
 router.get("/:id",recipeApiController.getById);
+router.get("/byproperty",recipeApiController.getByProperty);
 router.post("/",recipeApiController.create);
 router.put("/:id",recipeApiController.update);
 router.delete("/:id",recipeApiController.remove);

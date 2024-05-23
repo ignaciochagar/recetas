@@ -1,0 +1,37 @@
+[
+    {
+        "email": "usuario1@example.com",
+        "username": "usuario1",
+        "password": "hashedpassword1",
+        "role": "user",
+        "recipes": ["60d0fe4f5311236168a109cf"]
+    },
+    {
+        "email": "chef1@example.com",
+        "username": "chef1",
+        "password": "hashedpassword2",
+        "role": "chef",
+        "recipes": ["60d0fe4f5311236168a109d0"]
+    },
+    {
+        "email": "admin1@example.com",
+        "username": "admin1",
+        "password": "hashedpassword3",
+        "role": "admin",
+        "recipes": []
+    },
+    {
+        "email": "usuario2@example.com",
+        "username": "usuario2",
+        "password": "hashedpassword4",
+        "role": "user",
+        "recipes": ["60d0fe4f5311236168a109d1"]
+    },
+    {
+        "email": "chef2@example.com",
+        "username": "chef2",
+        "password": "hashedpassword5",
+        "role": "chef",
+        "recipes": ["60d0fe4f5311236168a109d2", "60d0fe4f5311236168a109d3"]
+    }
+]

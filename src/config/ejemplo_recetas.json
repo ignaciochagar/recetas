@@ -1,0 +1,95 @@
+[
+    {
+        "title": "Espaguetis a la Carbonara",
+        "description": "Un delicioso plato de espaguetis con una salsa cremosa de huevo, queso y panceta.",
+        "ingredients": [
+            "200g de espaguetis",
+            "100g de panceta",
+            "2 huevos",
+            "50g de queso parmesano rallado",
+            "2 dientes de ajo",
+            "Sal",
+            "Pimienta negra"
+        ],
+        "instructions": "1. Cocina los espaguetis según las instrucciones del paquete. 2. Mientras tanto, fríe la panceta en una sartén hasta que esté crujiente. 3. Bate los huevos en un bol y mezcla con el queso parmesano. 4. Escurre los espaguetis y añade la panceta y el ajo picado. 5. Retira del fuego y mezcla rápidamente con la mezcla de huevo y queso. 6. Sazona con sal y pimienta al gusto.",
+        "image": "https://example.com/carbonara.jpg",
+        "category": "Pasta",
+        "author": "60d0fe4f5311236168a109ca"
+    },
+    {
+        "title": "Ensalada César",
+        "description": "Una ensalada clásica con lechuga romana, crutones y una deliciosa salsa César.",
+        "ingredients": [
+            "1 lechuga romana",
+            "100g de crutones",
+            "50g de queso parmesano rallado",
+            "1 pechuga de pollo",
+            "1 huevo",
+            "2 anchoas",
+            "1 diente de ajo",
+            "1 cucharada de mostaza",
+            "Jugo de 1 limón",
+            "100ml de aceite de oliva",
+            "Sal",
+            "Pimienta negra"
+        ],
+        "instructions": "1. Cocina la pechuga de pollo a la parrilla y córtala en tiras. 2. En un bol, mezcla el huevo, las anchoas, el ajo, la mostaza y el jugo de limón. 3. Añade lentamente el aceite de oliva mientras mezclas hasta obtener una salsa cremosa. 4. Lava y corta la lechuga romana y colócala en un bol grande. 5. Añade los crutones, el queso parmesano y las tiras de pollo. 6. Vierte la salsa César sobre la ensalada y mezcla bien. 7. Sazona con sal y pimienta al gusto.",
+        "image": "https://example.com/caesar.jpg",
+        "category": "Ensalada",
+        "author": "60d0fe4f5311236168a109cb"
+    },
+    {
+        "title": "Tacos de Carne Asada",
+        "description": "Tacos tradicionales mexicanos con carne asada marinada y una variedad de guarniciones.",
+        "ingredients": [
+            "500g de carne de res",
+            "1 cebolla",
+            "2 dientes de ajo",
+            "Jugo de 2 limones",
+            "1 cucharadita de comino",
+            "1 cucharadita de paprika",
+            "Sal",
+            "Tortillas de maíz",
+            "Cilantro fresco",
+            "Salsa picante"
+        ],
+        "instructions": "1. Marina la carne de res con cebolla picada, ajo, jugo de limón, comino, paprika y sal durante al menos 2 horas. 2. Cocina la carne a la parrilla hasta que esté al punto deseado. 3. Corta la carne en tiras finas. 4. Calienta las tortillas de maíz en una sartén. 5. Coloca la carne en las tortillas y añade cilantro fresco y salsa picante al gusto.",
+        "image": "https://example.com/tacos.jpg",
+        "category": "Mexicana",
+        "author": "60d0fe4f5311236168a109cc"
+    },
+    {
+        "title": "Pizza Margarita",
+        "description": "Una pizza clásica con salsa de tomate, mozzarella fresca y albahaca.",
+        "ingredients": [
+            "1 masa de pizza",
+            "200g de salsa de tomate",
+            "250g de mozzarella fresca",
+            "Hojas de albahaca fresca",
+            "Aceite de oliva",
+            "Sal",
+            "Pimienta negra"
+        ],
+        "instructions": "1. Precalienta el horno a 220°C. 2. Extiende la masa de pizza sobre una bandeja para hornear. 3. Unta la salsa de tomate sobre la masa. 4. Coloca rodajas de mozzarella fresca sobre la salsa. 5. Hornea durante 15-20 minutos o hasta que la masa esté dorada y el queso derretido. 6. Retira del horno y añade hojas de albahaca fresca, un chorrito de aceite de oliva, sal y pimienta al gusto.",
+        "image": "https://example.com/pizza.jpg",
+        "category": "Italiana",
+        "author": "60d0fe4f5311236168a109cd"
+    },
+    {
+        "title": "Brownies de Chocolate",
+        "description": "Deliciosos brownies de chocolate con un interior húmedo y una corteza crujiente.",
+        "ingredients": [
+            "200g de chocolate negro",
+            "150g de mantequilla",
+            "200g de azúcar",
+            "3 huevos",
+            "100g de harina",
+            "1 cucharadita de esencia de vainilla",
+            "1 pizca de sal"
+        ],
+        "instructions": "1. Precalienta el horno a 180°C. 2. Derrite el chocolate y la mantequilla en un bol a baño maría. 3. Añade el azúcar y mezcla bien. 4. Incorpora los huevos uno a uno, mezclando después de cada adición. 5. Añade la esencia de vainilla y una pizca de sal. 6. Tamiza la harina y mézclala suavemente con la masa. 7. Vierte la mezcla en un molde engrasado y hornea durante 25-30 minutos. 8. Deja enfriar antes de cortar en porciones.",
+        "image": "https://example.com/brownies.jpg",
+        "category": "Postre",
+        "author": "60d0fe4f5311236168a109ce"
+    }
+]
