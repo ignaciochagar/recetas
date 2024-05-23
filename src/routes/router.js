@@ -14,7 +14,7 @@ const router  =  Router();
     res.json({data:"hello api"});
 }) 
  
-router.use("/users",isAdmin,userRouter);
+router.use("/users",userRouter);
 router.use("/recipes",isAuthenticated,recipeRouter);
 router.use("/comments",isAuthenticated,commentRouter);
 router.use("/",authRouter);

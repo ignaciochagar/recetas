@@ -4,13 +4,13 @@ import userController from "../users/userController.js";
 
 const getAll = async(userId=null)=> {
     try {
-        if(!userId){
-            const projects = await projectModel.find();
-            return projects;
+        const recipes = await recipeModel.find();
+        return recipes;
+       /*  if(!userId){
         }
         const user =await userController.getById(userId);
-        await user.populate("projects");
-        return user.projects;
+        await user.populate("recipes");
+        return user.recipes; */
     } catch (error) {
         console.error(error);
         return [];
@@ -34,9 +34,9 @@ const getById = async(id) =>{
 const create = async(data) =>{
     try {
         const recipe = await recipeModel.create(data);
-        recipe.users.push(data.owner);
-        await recipe.save();
-        await userController.addRecipe(data.owner,recipe._id);
+       
+       
+        await userController.addRecipe(data.author,recipe._id);
         return recipe;
     } catch (error) {
         console.error(error); 
@@ -61,7 +61,7 @@ const remove = async(id) =>{
     try {
         const recipe = await recipeModel.findByIdAndDelete(id);
         const result = await commentController.removeForRecipe(id);
-        await userController.removeRecipe(recipe.owner,recipe._id);
+        await userController.removeRecipe(recipe.author,recipe._id);
         return recipe;
     } catch (error) {
         console.error(error);
@@ -89,7 +89,7 @@ const removeUser = async(recipeId,userId)=>{
         console.log("removeUser",recipeId,userId)
         const recipe = await getById(recipeId);
         if(userId.equals(recipe.author)){
-            return {error:"El owner no se puede borrar"};
+            return {error:"El author no se puede borrar"};
         }
         await userController.removeRecipe(userId,recipeId);
         if(recipe.users.includes(userId)){

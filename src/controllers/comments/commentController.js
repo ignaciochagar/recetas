@@ -34,7 +34,7 @@ const create = async(data) =>{
     try {
         const comment = await commentModel.create(data);
         if(comment){
-            await recipeController.addcomment(comment.recipe,comment._id)
+            await recipeController.addComment(comment.recipe,comment._id)
         }
         return comment;
     } catch (error) {
