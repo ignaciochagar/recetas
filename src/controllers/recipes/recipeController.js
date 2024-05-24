@@ -22,13 +22,24 @@ const getById = async(id) =>{
         if(!recipe){
             return null;
         }
-        await recipe.populate("users");
-        await recipe.populate("tasks");
+        await recipe.populate("author");
+        //await recipe.populate("comments");
         return recipe;
     } catch (error) {
         console.error(error);
         return null;
         
+    }
+}
+
+const getByProperty = async (property, value) => {
+    try {
+        console.log("property", property)
+        console.log("value", value)
+        const recipes = await recipeModel.find({ [property]: value })
+        return recipes;
+    } catch (error) {
+        return null;
     }
 }
 const create = async(data) =>{
@@ -131,6 +142,7 @@ const removeComment = async(recipeId,commentId)=>{
 export const functions = {
     getAll,
     getById,
+    getByProperty,
     create,
     update,
     remove,
